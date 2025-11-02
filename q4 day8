@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int n, count = 0, sum = 0, product = 1;
+
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    if (n < 0)
+        n = -n;  // make it positive if negative
+
+    if (n == 0) {
+        count = 1;
+        sum = 0;
+        product = 0;
+    } else {
+        while (n != 0) {
+            int digit = n % 10;  // extract last digit
+            count++;
+            sum += digit;
+            product *= digit;
+            n /= 10;  // remove last digit
+        }
+    }
+
+    printf("Count of digits = %d\n", count);
+    printf("Sum of digits = %d\n", sum);
+    printf("Product of digits = %d\n", product);
+
+    return 0;
+}
