@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int n, rev = 0;
+    
+    // Read input number
+    scanf("%d", &n);
+    
+    // Reverse the number
+    while (n != 0) {
+        int last = n % 10;    // Get the last digit
+        rev = rev * 10 + last; // Append it to reversed number
+        n /= 10;               // Remove the last digit
+    }
+    
+    // Print the reversed number
+    printf("%d", rev);
+    
+    return 0;
+}
